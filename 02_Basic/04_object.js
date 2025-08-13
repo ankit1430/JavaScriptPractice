@@ -23,7 +23,15 @@ const obj2 = {1 : "a" , 2 : "b"}
 const obj3 = {...obj1,...obj2}
 // console.log(obj3)
 
-console.log(Object.keys(tinderUser));
-console.log(Object.values(tinderUser))
-console.log(Object.entries(tinderUser))
-console.log(tinderUser.hasOwnProperty("isLogged"))
+// console.log(Object.keys(tinderUser));
+// console.log(Object.values(tinderUser))
+// console.log(Object.entries(tinderUser))
+// console.log(tinderUser.hasOwnProperty("isLogged"))
+
+const course = {
+    courseName : "AI and ML",
+    price : 999,
+    courseInstructor : "Harkirat"
+}
+const {courseInstructor : Instructor} = course;
+console.log(Instructor)
