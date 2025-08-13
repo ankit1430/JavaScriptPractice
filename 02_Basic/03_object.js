@@ -6,7 +6,7 @@ const JsUser = {
     "Full name":"Ankit Thakur",
     [mySym] : "mykey1",
     age: 18,
-    location: "Madubani",
+    location: "Madhubani",
     email: "ankit@meta.com",
     isLoggedIn: false,
     lastLoggedIn: ["Monday","Saturday"]
