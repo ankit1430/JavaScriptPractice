@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>XML_REQUEST</title>
+    <style>
+        .box {
+          border: 2px solid black;
+          padding: 20px;
+          width: 300px;
+          text-align: center;
+          font-family: Arial, sans-serif;
+        }
+
+        .hiteshImg img {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          object-fit: cover;
+          margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+  </div>
+</body>
+<script>
+    const imgDiv = document.createElement('div');
+    imgDiv.className = "hiteshImg"; 
+
+    const mainDiv = document.querySelector('.box');
+
+    const requestUrl = 'https://api.github.com/users/hiteshChoudhary';
+    const xhr = new XMLHttpRequest();
+
+    xhr.open('GET', requestUrl);
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState == 4) {
+        const data = JSON.parse(this.responseText);
+
+        // profile image
+        imgDiv.innerHTML = `<img src="${data.avatar_url}" alt="profile">`;
+
+        // followers text add karna
+        const followers = document.createElement('p');
+        followers.textContent = `Followers: ${data.followers}`;
+        imgDiv.appendChild(followers);
+
+        mainDiv.appendChild(imgDiv);
+      }
+    }
+    xhr.send();
+</script>
+</html>
